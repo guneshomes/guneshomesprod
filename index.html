@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Güneş Apart</title>
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="company-logo.png" />
+    <style>
+      .logo {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 40px;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+      }
+
+      .icon-button {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: #fff;
+        border: 2px solid #ccc;
+        padding: 15px;
+        margin: 10px;
+        width: 100%;
+        max-width: 300px;
+        border-radius: 50px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        font-size: 18px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+        text-align: left;
+        padding-left: 30px;
+      }
+
+      .icon-button i {
+        margin-right: 10px;
+        font-size: 24px;
+      }
+
+      .icon-button.instagram i {
+        color: #e1306c; /* Instagram color */
+      }
+
+      .icon-button.youtube i {
+        color: #ff0000; /* YouTube color */
+      }
+
+      .icon-button.maps i {
+        color: #4285f4; /* Google Maps color */
+      }
+
+      .icon-button.facebook i {
+        color: #3b5998; /* Facebook color */
+      }
+
+      .icon-button:hover {
+        background-color: #f0f0f0;
+      }
+
+      @media (min-width: 768px) {
+        .logo {
+          width: 250px; /* Adjusted width for larger screens */
+          height: 250px; /* Adjusted height for larger screens */
+          margin-bottom: 60px; /* Adjusted margin for larger screens */
+        }
+
+        .icon-button {
+          padding: 20px;
+          font-size: 20px;
+          width: 100%;
+          max-width: 600px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="company-logo.png" alt="Logo" class="logo" />
+      <button class="icon-button maps" onclick="goToLink('konum')">
+        <i class="fas fa-map-marker-alt"></i> Konumumuz
+      </button>
+      <button class="icon-button youtube" onclick="goToLink('youtube')">
+        <i class="fab fa-youtube"></i> YouTube Videolarımız
+      </button>
+      <button class="icon-button instagram" onclick="goToLink('instagram')">
+        <i class="fab fa-instagram"></i> Instagram Sayfamız
+      </button>
+      <button class="icon-button facebook" onclick="goToLink('facebook')">
+        <i class="fab fa-facebook"></i> Facebook Sayfamız
+      </button>
+      <button class="icon-button phone" onclick="call()">
+        <i class="fas fa-phone"></i> Bizi arayın <br />
+        +90 554 980 01 05
+      </button>
+    </div>
+
+    <script>
+      links = new Map([
+        ["instagram", "https://www.instagram.com/dikiligunesapart"],
+        ["youtube", "https://www.youtube.com/@dikiligunesapart"],
+        ["konum", "https://maps.app.goo.gl/6pzaZozQh4JTt9is7"],
+        ["facebook", "https://www.facebook.com/dikiligunesapart/"],
+      ]);
+
+      function goToLink(param) {
+        window.open(this.links.get(param), "_blank");
+      }
+
+      function call() {
+        window.open("tel:+905549800105");
+      }
+    </script>
+  </body>
+</html>
